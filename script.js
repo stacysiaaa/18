@@ -115,8 +115,8 @@ function closeFullscreen() {
     fullscreenImg.src = "";
 }
 
-fullscreen.addEventListener("click", function(e) {
-    if (e.target === fullscreen) {
+fullscreen.addEventListener("click", function(event) {
+    if (event.target === fullscreen) {
         closeFullscreen();
     }
 });
