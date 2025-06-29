@@ -50,3 +50,32 @@
 .dropdown.show {
     display: block;
 }
+
+.ship{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+margin-top: 100px;
+}
+
+.gallery img{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.fullscreen-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
+}
+

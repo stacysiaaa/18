@@ -40,6 +40,8 @@ boxAnimated.addEventListener('mouseover', function () {
     boxAnimated.style.transform = 'translateX(100px)';
 })
 
+
+
 boxAnimated.addEventListener('mouseout', function () {
     boxAnimated.style.transform = 'translateX(0)';
 
@@ -62,3 +64,59 @@ bigFont.addEventListener('click', function () {
 document.querySelector(".dropdown-btn").addEventListener('click', function () {
     document.querySelector(".dropdown").classList.toggle("show");
 })
+
+
+
+let ship=document.querySelector(".ship");
+let rect = ship.getBoundingClientRect();
+
+let topPos = rect.top + window.scrollY;
+let leftPos = rect.left + window.scrollX;
+let step = 20;
+
+document.addEventListener("keydown", function (event) {
+    switch (event.key) {
+        case "ArrowUp":
+            topPos -= step;
+            ship.style.top = topPos + "px";
+            break;
+        case "ArrowDown":
+            topPos += step;
+            ship.style.top = topPos + "px";
+            break;
+        case "ArrowLeft":
+            leftPos -= step;
+            ship.style.left = leftPos + "px";
+            break;
+        case "ArrowRight":
+            leftPos += step;
+            ship.style.left = leftPos + "px";
+            break;
+        default:
+            return;
+    }
+});
+
+
+
+let galleryImages = document.querySelectorAll(".gallery img");
+let fullscreen = document.querySelector(".fullscreen");
+let fullscreenImg = document.querySelector(".fullscreen-img");
+
+galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+        fullscreenImg.src = img.src;
+        fullscreen.style.display = "flex";
+    });
+});
+
+function closeFullscreen() {
+    fullscreen.style.display = "none";
+    fullscreenImg.src = "";
+}
+
+fullscreen.addEventListener("click", function(e) {
+    if (e.target === fullscreen) {
+        closeFullscreen();
+    }
+});
